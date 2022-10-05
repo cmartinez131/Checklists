@@ -11,6 +11,8 @@ import UIKit
 
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
     
+    var checklist: Checklist!
+    
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(
             for: .documentDirectory,
@@ -84,6 +86,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         
         // Load items
         loadChecklistItems()
+        title = checklist.name
 
     }
     
